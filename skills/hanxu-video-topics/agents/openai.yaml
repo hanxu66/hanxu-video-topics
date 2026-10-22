@@ -1,0 +1,4 @@
+interface:
+  display_name: "韩叙短视频选题 Skill"
+  short_description: "从专业经历、个人发展和业务问题找灵感，用具体回想提示帮你想到自己能讲什么"
+  default_prompt: "用 $hanxu-video-topics 根据我的经历、目标观众和当前问题找一批短视频灵感，每条告诉我可以回想哪件事；背景和话题范围由我逐步补充。"

@@ -1,0 +1,17 @@
+{
+  "background": {"roles": [], "fields": [], "strengths": [], "current_stage": null},
+  "experience_seeds": [],
+  "current_questions": [],
+  "direction": null,
+  "audience": null,
+  "goals": [],
+  "topic_scope": {"include": [], "exclude": [], "ai_relevance": null},
+  "platforms": [],
+  "formats": [],
+  "keywords": [],
+  "reference_accounts": [],
+  "preferences": [],
+  "exclusions": [],
+  "scope": {},
+  "confirmation": {}
+}
