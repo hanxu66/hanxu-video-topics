@@ -6,15 +6,18 @@
 
 适合有专业积累、希望做内容表达或发展个人业务的人。没有产品、客户或成熟账号也能开始。自己的背景和观众由你补充，包内没有预填作者的个人情况。
 
-当前版本：`v0.2.1`。需要能读取Skill的AI助手；主动搜索还需要该助手当前具备搜索或浏览能力。本包不附平台账号、采集服务或API密钥。
+当前版本：`v0.2.2`。需要能读取Skill的AI助手；主动搜索还需要该助手当前具备搜索或浏览能力。本包不附平台账号、采集服务或API密钥。
 
-## 安装：把这段话发给 Codex
+## 安装与更新
+
+完整步骤见[安装与更新](INSTALL.md)：安装完整技能 → 确认位置和版本 → 开始任务；更新前保留个人记录与本地修改，将旧版备份到技能发现目录之外，失败可恢复。
+
 
 ```text
-请用 $skill-installer 从 https://github.com/hanxu66/hanxu-video-topics/tree/v0.2.1/skills/hanxu-video-topics 安装韩叙短视频选题Skill，技能名 hanxu-video-topics。请保留整个技能目录，核对入口、引用和脚本。若已有同名旧版，先备份到技能发现目录之外再更新，不改其他技能。告诉我实际安装位置，并检查是否已能识别这个Skill。
+用 $hanxu-video-topics 帮我找一批短视频灵感。我做过【经历】，希望给【观众】看，最近关心【问题】。先检查可访问来源，再按实际能力检索；每条给参考、启发和具体回想提示。先不写稿，不编我的经历。
 ```
 
-也可以下载[最新发布版](https://github.com/hanxu66/hanxu-video-topics/releases/latest)中的`hanxu-video-topics-v0.2.1.zip`，解压后安装完整的`hanxu-video-topics`目录。Mac、Windows路径、目录层级、更新与排错见[安装说明](INSTALL.md)。
+主动检索需要宿主当前有搜索/浏览能力及自己的正常平台会话；无联网能力可先整理给定材料。仅对话使用无需Python，本地题库工具需要Python3.9以上。
 
 ## 第一次使用：直接告诉它你的情况
 
@@ -69,7 +72,7 @@
 
 ```sh
 python3 -m unittest discover -s tests -v
-python3 scripts/build_release.py --output /你选择的输出路径/hanxu-video-topics-v0.2.1.zip
+python3 scripts/build_release.py --output /你选择的输出路径/hanxu-video-topics-v0.2.2.zip
 ```
 
 采用[MIT许可](LICENSE)，仅覆盖本包文字和代码，不授予第三方参考作品或用户素材的使用权。

@@ -3,7 +3,7 @@ name: hanxu-video-topics
 description: 根据用户的专业经历、目标观众和当前关心的问题，寻找短视频灵感与真实参考，用具体回想提示帮助用户想到自己能讲的经历，补充可挑选的选题库。适用于不知道拍什么、想找参考或补库；范围由用户配置，不限AI工具，不自动写稿。
 license: MIT
 metadata:
-  version: "0.2.1"
+  version: "0.2.2"
   author: "Hanxu"
 ---
 

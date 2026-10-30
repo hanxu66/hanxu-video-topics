@@ -1,67 +1,71 @@
-# 安装与更新
+# 短视频选题｜安装与更新
 
-## 推荐：让 Codex 安装
+> 版本：0.2.2。安装完整目录，个人资料与技能文件分开保存。
 
-把下面这段话复制到自己的Codex对话中：
+## 1. 安装完整技能
 
-```text
-请用 $skill-installer 从 https://github.com/hanxu66/hanxu-video-topics/tree/v0.2.1/skills/hanxu-video-topics 安装韩叙短视频选题Skill，技能名 hanxu-video-topics。请识别我的系统，保留完整目录，核对SKILL.md、references、agents和scripts。已有同名版本时，先将旧版备份到技能发现目录之外再更新，不改其他技能。告诉我实际安装位置，并检查能否识别。
-```
-
-这会选择仓库中的技能子目录，不把整个源码仓库误当技能。安装后在后续对话中调用`$hanxu-video-topics`；如果仍未出现，重新打开Codex后再试。安装目录由本机安装器确定，以助手报告的实际路径为准，不需要在多个位置重复安装。
-
-## 手动安装：Mac 和 Windows
-
-1. 打开[最新Release](https://github.com/hanxu66/hanxu-video-topics/releases/latest)，下载名为`hanxu-video-topics-v0.2.1.zip`的文件。GitHub自动生成的“Source code”是开发源码，目录层级不同。
-2. 解压。发布包应是下面的结构，`SKILL.md`直接位于`hanxu-video-topics`之下。
-3. 将整个`hanxu-video-topics`目录复制到你的本机用户技能目录，保留子目录。不要只复制`SKILL.md`，也不要多嵌套一层同名文件夹。
+**本地包：**解压本版ZIP，找到直接含有 `SKILL.md` 的 `hanxu-video-topics` 文件夹，把实际位置交给Codex：
 
 ```text
-hanxu-video-topics/
-  SKILL.md
-  README.md
-  INSTALL.md
-  USAGE.md
-  LICENSE
-  agents/openai.yaml
-  references/...
-  scripts/topic_library.py
+请检查我提供的 hanxu-video-topics 完整文件夹，把它安装到当前电脑适合我的本地Skill位置，保留配套引用。先核对现有安装；有旧版或本地修改就保留并移到技能发现目录外备份，不覆盖个人资料、其他Skill或维护源码。失败恢复旧版，成功告诉我实际位置和读取到的版本。
 ```
 
-按当前[OpenAI官方技能文档](https://learn.chatgpt.com/docs/build-skills#where-codex-loads-local-skills)，用户技能目录是`$HOME/.agents/skills`。常见路径：
+**从GitHub安装：**将下段复制到自己的Codex对话中：
 
-| 系统 | 复制后的技能入口 |
+```text
+请用 $skill-installer 从 https://github.com/hanxu66/hanxu-video-topics/tree/v0.2.2/skills/hanxu-video-topics 的所指技能子目录安装 短视频选题 Skill，技能标识为 hanxu-video-topics。先识别当前实际执行的电脑和系统，保留完整目录，核对入口与配套引用。已有同名或旧名版本时先确认正在使用的位置、保留本地修改并备份到技能发现目录之外；不要覆盖个人资料、维护源码或其他Skill。安装失败恢复旧版；成功后报告实际位置和读取到的版本。
+```
+
+不要只复制 `SKILL.md`，也不要把整个开发仓库误当技能。GitHub源码中的技能位置是 `skills/hanxu-video-topics`；下载Source code ZIP时按这个位置找到入口，不把上层包装目录一起安装。
+
+安装器可能有自己的默认位置，以本机实际报告为准；无需为匹配教程再复制第二份。手动安装只选一个范围：
+
+| 范围 | 入口位置 |
 |---|---|
-| macOS | `~/.agents/skills/hanxu-video-topics/SKILL.md` |
-| Windows | `%USERPROFILE%\.agents\skills\hanxu-video-topics\SKILL.md` |
+| macOS当前用户 | `~/.agents/skills/hanxu-video-topics/SKILL.md` |
+| Windows当前用户 | `%USERPROFILE%\.agents\skills\hanxu-video-topics\SKILL.md` |
+| 仅当前项目 | `项目目录/.agents/skills/hanxu-video-topics/SKILL.md` |
 
-Mac可在Finder用“前往文件夹”打开`~/.agents/skills`；Windows可在文件资源管理器地址栏输入`%USERPROFILE%\.agents\skills`。不存在时可创建该目录。若内置安装器已安装到它报告的位置，直接使用，不必为匹配表格再复制一次。
+## 2. 确认读到了哪一版
 
-若用GitHub“Code → Download ZIP”下载源码，技能目录位于`hanxu-video-topics-main/skills/hanxu-video-topics`，复制其中这整个子目录。仓库根目录不是技能入口。
-
-## 验证安装并开始
-
-发给Codex：
+安装完成后，在下一轮或新对话输入：
 
 ```text
-使用 $hanxu-video-topics，先确认已经读到本Skill。告诉我当前能否搜索或浏览，以及是否能保存本地文件。然后根据我提供的专业和观众开始找灵感；只问这次缺少的必要背景，不要求我先填完整配置。
+使用 $hanxu-video-topics。先确认实际读取的Skill位置、包内版本及当前依赖，再根据我的材料开始。不要把能读到说明当作所有软件或平台已经连通。
 ```
 
-助手应能说明这个Skill用于找灵感与补充备选库，每条包含具体回想提示。它能读到方法，不等于能登录平台或已经开始搜索。完整首次任务见[使用说明](USAGE.md)。
+未出现时先核对入口层级、引用文件及重复安装，再重开Codex。`$`是Codex对话里的技能选择方式，不是在终端执行的命令。方法版本以包内说明为据；存在 `SOURCE.json` 时同时报告构建版本，未知版本不猜。
 
-想保存配置和题库时，指定一个你自己的内容工作目录，例如Mac的`~/Documents/我的选题库`或Windows的`D:\内容创作\我的选题库`，让助手在其中初始化；不要存进技能安装目录。仅对话使用无需Python；本地库工具需要Python 3.9以上，Windows可由助手按本机选择`py -3`或实际可用解释器，不要求先装WSL。
+## 3. 开始本次任务
 
-## 更新与排错
+主动检索需要宿主当前有搜索/浏览能力及自己的正常平台会话；无联网能力可先整理给定材料。仅对话使用无需Python，本地题库工具需要Python3.9以上。
 
-| 情况 | 处理方式 |
+```text
+用 $hanxu-video-topics 帮我找一批短视频灵感。我做过【经历】，希望给【观众】看，最近关心【问题】。先检查可访问来源，再按实际能力检索；每条给参考、启发和具体回想提示。先不写稿，不编我的经历。
+```
+
+先指定一个自己的工作目录，放入本次材料和输出；安装目录只放技能。安装成功、宿主能读到文件、工具连通和最终结果合格分别核对。AI工具及可能的外部服务费用按自己的账号承担。
+
+## 4. 更新、保留资料与失败恢复
+
+1. 先记录当前安装位置及版本，确认工作目录里的profile.json、library.json、已有选择和反馈仍可读取。如果个人资料误放在安装目录，先保留到独立工作目录再处理更新。
+2. 比较新版与旧版，保留对Skill文件的本地修改；不自动把用户修改合并进新版规则。将完整旧版备份到所有技能发现目录之外，不把备份留在 `.agents/skills`、旧的 `.codex/skills` 或其他正在扫描的位置。
+3. 仅替换这一个Skill的文件，保留工作目录和原维护源码。安装器提示目标已存在时不要强制覆盖；先核对旧版和备份。安装或引用核对失败时，移出不完整新版，恢复刚备份的旧版，不用删除用户资料重试。
+4. 重新读取实际版本，先完成一个小任务或局部修改，再继续原来的工作；不要把验证更新扩成一次完整重做。
+
+```text
+请核对 hanxu-video-topics 的当前安装与新版，先备份旧版和我的修改到技能发现目录之外，只更新这一项。保持我的工作目录不变，失败恢复旧版。更新后读回实际版本，再从我指定的记录继续，不重新收集已经提供的背景。
+```
+
+## 5. 常见问题
+
+| 情况 | 处理 |
 |---|---|
-| 看不到`$hanxu-video-topics` | 核对入口层级和安装器实际路径；在后续对话重试，仍未出现再重开Codex。 |
-| 同名Skill出现两份 | 保留一份有效安装，将旧版备份移出所有技能发现目录；不把备份留在技能目录里。 |
-| 安装器提示目标已存在 | 让助手先核对和保留旧版，再更新；不用强制覆盖或删除自己的题库。 |
-| 已安装，但搜不到抖音或小红书 | 让助手说明缺的是搜索工具、正常登录还是可访问来源；可以先整理你提供的题面文本或截图，不宣称已联网检索。 |
-| Python不可用 | 先在对话中使用；需要本地积累时再由助手说明安装Python的步骤。 |
-| 结果仍然泛泛或偏工具 | 给具体反馈，如“多找职业选择与客户沟通，不要工具教程，每条提示我回想一次真实沟通”。 |
+| 同名Skill出现两份 | 确认实际使用位置，备份移出所有发现目录，只保留一份活动安装。 |
+| 安装目录多套一层 | 确保 `hanxu-video-topics/SKILL.md` 直接存在，保留其完整配套目录。 |
+| 以前的记录找不到 | 指定原工作目录或提供可复制记录；安装Skill不会自动同步个人资料。 |
+| 当前工具能力不足 | 说明缺的是文件、搜索、音视频、软件连接还是账号权限，保留已完成结果，处理本次必要缺项。 |
+| 提示升级会覆盖目标 | 先比较与备份，不强制覆盖，不将卸载或删除当作资料备份。 |
 
-更新时仅替换技能文件，用户工作目录中的`profile.json`、`library.json`和反馈继续保留。已有题库可读取；新研究条目需要回想提示，旧条目缺失时显示待补，不自动改写你的选择。
 
-安装机制参考[OpenAI官方文档](https://learn.chatgpt.com/docs/build-skills#install-curated-skills-for-local-use)。其他客户端的目录、调用与联网能力按其实际机制确认，不把本页当全部客户端的兼容承诺。
+Codex目录与发现机制依据[OpenAI官方说明](https://learn.chatgpt.com/docs/build-skills)。本指南统一安装与更新方式，原有方法、功能、参数、公开边界和各客户端验证范围保持原说明。
