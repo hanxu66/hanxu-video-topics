@@ -1,6 +1,6 @@
 # 短视频选题｜安装与更新
 
-> 版本：0.2.2。安装完整目录，个人资料与技能文件分开保存。
+> 版本：0.2.3。下方GitHub命令固定取得本版。安装完整目录，个人资料与技能文件分开保存。
 
 ## 1. 安装完整技能
 
@@ -13,7 +13,7 @@
 **从GitHub安装：**将下段复制到自己的Codex对话中：
 
 ```text
-请用 $skill-installer 从 https://github.com/hanxu66/hanxu-video-topics/tree/v0.2.2/skills/hanxu-video-topics 的所指技能子目录安装 短视频选题 Skill，技能标识为 hanxu-video-topics。先识别当前实际执行的电脑和系统，保留完整目录，核对入口与配套引用。已有同名或旧名版本时先确认正在使用的位置、保留本地修改并备份到技能发现目录之外；不要覆盖个人资料、维护源码或其他Skill。安装失败恢复旧版；成功后报告实际位置和读取到的版本。
+请用 $skill-installer 从 https://github.com/hanxu66/hanxu-video-topics/tree/v0.2.3/skills/hanxu-video-topics 的所指技能子目录安装 短视频选题 Skill，技能标识为 hanxu-video-topics。先识别当前实际执行的电脑和系统，保留完整目录，核对入口与配套引用。已有同名或旧名版本时先确认正在使用的位置、保留本地修改并备份到技能发现目录之外；不要覆盖个人资料、维护源码或其他Skill。安装失败恢复旧版；成功后报告实际位置和读取到的版本。
 ```
 
 不要只复制 `SKILL.md`，也不要把整个开发仓库误当技能。GitHub源码中的技能位置是 `skills/hanxu-video-topics`；下载Source code ZIP时按这个位置找到入口，不把上层包装目录一起安装。
